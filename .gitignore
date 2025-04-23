@@ -1,1 +1,7 @@
 LICENSE
+todo_task/__pycache__/__init__.cpython-310.pyc
+todo_task/models/__pycache__/__init__.cpython-310.pyc
+todo_task/models/__pycache__/todo_task.cpython-310.pyc
+todo_users/__pycache__/__init__.cpython-310.pyc
+todo_users/models/__pycache__/__init__.cpython-310.pyc
+todo_users/models/__pycache__/todo_user.cpython-310.pyc
