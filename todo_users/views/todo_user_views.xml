@@ -1,17 +1,21 @@
 <odoo>
+<menuitem id="menu_todo_user_root"
+          name="Users"
+          web_icon="todo_users,static/description/icon.png"/>
+
     <data>
-        <record id="view_todo_user_tree" model="ir.ui.view">
-            <field name="name">todo.user.tree</field>
-            <field name="model">todo.user</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                    <field name="email"/>
-                    <field name="phone"/>
-                    <field name="active"/>
-                </tree>
-            </field>
-        </record>
+    <record id="view_todo_user_tree" model="ir.ui.view">
+        <field name="name">todo.user.tree</field>
+        <field name="model">todo.user</field>
+        <field name="arch" type="xml">
+          <tree>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="active"/>
+          </tree>
+        </field>
+    </record>
 
         <record id="view_todo_user_form" model="ir.ui.view">
             <field name="name">todo.user.form</field>
@@ -25,19 +29,18 @@
                             <field name="phone"/>
                             <field name="active"/>
                         </group>
-                        <field name="task_ids" widget="one2many_list"/>
                     </sheet>
                 </form>
             </field>
         </record>
 
         <record id="action_todo_user" model="ir.actions.act_window">
-            <field name="name">To-Do Users</field>
+            <field name="name">Users</field>
             <field name="res_model">todo.user</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="menu_todo_user_root" name="To-Do List" sequence="10"/>
-        <menuitem id="menu_todo_user" name="To-Do Users" parent="menu_todo_user_root" action="action_todo_user" sequence="10"/>
+        <menuitem id="menu_todo_user_root" name="Users" sequence="10"/>
+        <menuitem id="menu_todo_user" name="Users" parent="menu_todo_user_root" action="action_todo_user" sequence="10"/>
     </data>
 </odoo>

@@ -1,41 +1,49 @@
 <odoo>
+    <menuitem id="menu_todo_task_root"
+          name="Tasks"
+            web_icon="todo_task,static/description/icon.png"/>
     <record id="view_todo_task_tree" model="ir.ui.view">
         <field name="name">todo.task.tree</field>
         <field name="model">todo.task</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="assigned_to"/>
+                <field name="user_id"/>
                 <field name="due_date"/>
-                <field name="status"/>
+                <field name="state_icon" widget="html" string="Status"/>
             </tree>
         </field>
     </record>
-
     <record id="view_todo_task_form" model="ir.ui.view">
         <field name="name">todo.task.form</field>
         <field name="model">todo.task</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_set_status_in_progress" string="In Progress" type="object"
+                    class="btn btn-outline-warning"
+                    invisible="state != 'new'" />
+                    <button name="action_set_status_done" string="Done" type="object"
+                    class="btn btn-outline-success"
+                    invisible="state == 'done'" />
+                    <field name="state" widget="statusbar" />
+                </header>
                 <sheet>
                     <group>
                         <field name="name"/>
                         <field name="description"/>
-                        <field name="assigned_to"/>
+                        <field name="user_id"/>
                         <field name="due_date"/>
-                        <field name="status"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-
     <record id="action_todo_task" model="ir.actions.act_window">
-        <field name="name">To-Do Tasks</field>
+        <field name="name">Tasks</field>
         <field name="res_model">todo.task</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-    <menuitem id="menu_todo_task_root" name="To-Do Tasks" sequence="10"/>
+    <menuitem id="menu_todo_task_root" name="Tasks" sequence="10"/>
     <menuitem id="menu_todo_task" name="Tasks" parent="menu_todo_task_root" action="action_todo_task" sequence="10"/>
 </odoo>

@@ -2,17 +2,16 @@
 {
     'name': "Siraj Todo Task",
     'summary': "Task Manager for easier life",
-    'description': "creat and edit tasks assign tasks to users make life easier for you and harder for assigned users.",
-
+    'description': "Create and edit tasks, assign tasks to users, and make life easier for you and harder for assigned users.",
     'author': "PotatoFocus",
     'category': '',
     'version': '1.0',
-
-    'depends': ['base','siraj_todo_user'],
+    'depends': ['base', 'todo_users'], 
     'data': [
         'security/ir.model.access.csv',
-        'views/todo_task_view.xml',  
+        'views/todo_task_view.xml',
+        'views/todo_user_task_inherited_views.xml',
     ],
-        'application' : True,
+    'application': True
 }
 

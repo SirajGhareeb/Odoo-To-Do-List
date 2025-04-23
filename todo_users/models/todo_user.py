@@ -8,4 +8,3 @@ class ToDoUser(models.Model):
     email = fields.Char(string='Email', required=True)
     phone = fields.Char(string='Phone')
     active = fields.Boolean(string='Active', default=True)
-    task_ids = fields.One2many('todo.task', 'user_id', string='Tasks')
