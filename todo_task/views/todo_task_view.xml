@@ -1,7 +1,9 @@
 <odoo>
-    <menuitem id="menu_todo_task_root"
-          name="Tasks"
-            web_icon="todo_task,static/description/icon.png"/>
+
+    <menuitem id="menu_todo_task_root" name="Tasks"  web_icon="todo_task,static/description/icon.png"/>
+    <menuitem id="menu_todo_task" name="Tasks" parent="menu_todo_task_root" action="action_todo_task"/>
+   
+   
     <record id="view_todo_task_tree" model="ir.ui.view">
         <field name="name">todo.task.tree</field>
         <field name="model">todo.task</field>
@@ -44,6 +46,4 @@
         <field name="res_model">todo.task</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="menu_todo_task_root" name="Tasks" sequence="10"/>
-    <menuitem id="menu_todo_task" name="Tasks" parent="menu_todo_task_root" action="action_todo_task" sequence="10"/>
 </odoo>
